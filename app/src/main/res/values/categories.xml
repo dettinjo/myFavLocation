@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories_array">
+        <item>Buildings</item>
+        <item>Monument</item>
+        <item>Viewpoint</item>
+        <item>Landscape</item>
+        <item>Shops</item>
+        <item>No Category</item>
+    </string-array>
+</resources>
