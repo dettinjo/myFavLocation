@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="#">
-    <img src="https://i.imgur.com/U8a4a5A.png" alt="Logo" width="80" height="80">
+    <img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">MyFavLocation - Android Application</h3>
