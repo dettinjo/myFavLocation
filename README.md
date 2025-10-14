@@ -205,7 +205,7 @@ Joel Dettinger - jd087@hdm-stuttgart.de
 
 Sven Walter - sw201@hdm-stuttgart.de
 
-Project Link: [https://github.com/your_username/MyFavLocation](https://github.com/your_username/MyFavLocation)
+Project Link: [https://github.com/dettinjo/MyFavLocation](https://github.com/your_username/MyFavLocation)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
