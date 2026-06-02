@@ -1,0 +1,10 @@
+{
+  "title": "My Favourite Location",
+  "projectType": "Mobile Application",
+  "developedAt": "2025-01-19T00:00:00+00:00",
+  "weight": 2,
+  "publishLink": true,
+  "liveUrl": null,
+  "repoUrl": "https://github.com/dettinjo/myFavLocation",
+  "tags": ["Kotlin", "Android", "MVVM", "Room DB", "Retrofit", "Google Places API", "Android Jetpack"]
+}
