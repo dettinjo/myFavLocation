@@ -15,5 +15,8 @@
     "Google Places API",
     "Android Jetpack"
   ],
-  "description": "A native Android app to search, save, and map favourite locations using the Google Places API, built with Kotlin and MVVM."
+  "description": "A native Android app to search, save, and map favourite locations using the Google Places API, built with Kotlin and MVVM.",
+  "titleDe": "Mein Lieblingsort",
+  "descriptionDe": "Eine native Android-App zum Suchen, Speichern und Kartieren von Lieblingsorten über die Google Places API, entwickelt mit Kotlin und MVVM.",
+  "projectTypeDe": "Mobile Anwendung"
 }
