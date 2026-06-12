@@ -1,8 +1,14 @@
+<!-- portfolio:date=2020-07-14 -->
+
 [English](README.md) · [Deutsch](README.de.md)
 
 # My Favourite Location
 
 An Android application that lets users discover, save, and revisit their favourite places. Built with modern Android development practices, the app follows MVVM architecture and uses Jetpack components throughout.
+
+<p align="center">
+  <img src="docs/android.svg" alt="Android" width="170" />
+</p>
 
 ### Features
 
