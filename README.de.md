@@ -7,7 +7,7 @@
 Eine native Android-Anwendung, mit der Nutzer ihre Lieblingsort-Koordinaten über die Google Places API suchen, auf einer Karte visualisieren und dauerhaft in einer lokalen Datenbank speichern können.
 
 <p align="center">
-  <img src="docs/android.svg" alt="Android" width="170" />
+  <img src="docs/kotlin.svg" alt="Kotlin" width="170" />
 </p>
 
 ### Funktionen
