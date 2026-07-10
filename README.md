@@ -4,7 +4,7 @@
 
 # My Favourite Location
 
-An Android application that lets users discover, save, and revisit their favourite places. Built with modern Android development practices, the app follows MVVM architecture and uses Jetpack components throughout.
+A native Android app to search, save, and map favourite locations using the Google Places API, built with Kotlin and MVVM.
 
 <p align="center">
   <img src="docs/kotlin.svg" alt="Kotlin" width="170" />
