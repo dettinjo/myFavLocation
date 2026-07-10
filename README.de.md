@@ -4,7 +4,7 @@
 
 # Mein Lieblingsort
 
-Eine native Android-Anwendung, mit der Nutzer ihre Lieblingsort-Koordinaten über die Google Places API suchen, auf einer Karte visualisieren und dauerhaft in einer lokalen Datenbank speichern können.
+Eine native Android-App zum Suchen, Speichern und Kartieren von Lieblingsorten über die Google Places API, entwickelt mit Kotlin und MVVM.
 
 <p align="center">
   <img src="docs/kotlin.svg" alt="Kotlin" width="170" />
