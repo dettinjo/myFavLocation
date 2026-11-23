@@ -1,26 +1,42 @@
 <!-- portfolio:date=2020-07-14 -->
-
-[English](README.md) · [Deutsch](README.de.md)
-
 # My Favourite Location
 
-A native Android app to search, save, and map favourite locations using the Google Places API, built with Kotlin and MVVM.
+**[English](README.md) · [Deutsch](README.de.md)**
+
+<p align="center"><img src="docs/screenshots/mvvm-architecture.png" alt="Android Kotlin MVVM architecture combining Jetpack Navigation, Repositories, Room DB, and Retrofit" width="100%" /></p>
+
+A native Kotlin Android application built with MVVM architecture, Room DB offline storage, Retrofit, and the Google Places API to discover, map, and bookmark favourite places.
+
+## Highlights
+
+- **Clean MVVM + Android Jetpack architecture** — separates Jetpack Navigation fragments, `ViewModel` / `LiveData` state, and four domain repositories (`HomeRepository`, `SearchRepository`, `AddLocationRepository`, `FavLocationRepository`).
+- **Offline-first Room DB & Google Places sync** — persists bookmarked places locally through `LocationDB` and compile-time checked `LocationDao` queries (`Room DB`), while `Retrofit` + Gson and `GPSTracker` query nearby venues via the `Google Places API`.
+- **Media caching & automated Android tests** — loads place photography smoothly with `Glide`, renders interactive Google Maps pins, and includes JUnit and Espresso instrumentation tests.
+
+## Screenshots
 
 <p align="center">
-  <img src="docs/kotlin.svg" alt="Kotlin" width="170" />
+  <img src="docs/screenshots/places-sync-flow.png" alt="Google Places API discovery pipeline and offline Room DB storage flow" width="100%" />
 </p>
 
-### Features
+## Architecture
 
-- **Location Discovery**: Integrates with the Google Places API to search for and discover nearby points of interest.
-- **Save & Organise**: Users can bookmark locations with custom notes and tags, stored locally in a Room database.
-- **Offline-First**: All saved locations are available offline through Room's SQLite abstraction, with Retrofit handling remote API calls when connectivity is available.
-- **Map View**: Displays saved locations on an interactive map, allowing users to visualise their collection geographically.
-- **Clean Architecture**: The MVVM pattern separates concerns cleanly — ViewModel manages UI state, Repository abstracts data sources, Room handles local persistence, and Retrofit manages remote API calls.
+```
+Jetpack Navigation Fragments + ViewBinding (Home · Search · Add · Map · Fullscreen Image)
+         │  ViewModel + LiveData
+         ▼
+Repositories (Home · Search · AddLocation · FavLocation + Typed Callbacks)
+         ├──► Room DB (LocationDB · LocationDao · TypeConverter ──► Local SQLite)
+         └──► Retrofit + PlacesAPI + GPSTracker ──► Google Places API + Glide Images
+```
 
-### Technical Highlights
+## Tech Stack
 
-- **Room DB**: Type-safe SQLite access with DAO interfaces and LiveData/Flow integration for reactive UI updates
-- **Retrofit**: Type-safe HTTP client for Google Places API integration with Gson serialization
-- **Glide**: Efficient image loading for place photos from the Google Places Photo API
-- **Android Jetpack**: Navigation component, ViewModel, LiveData, and ViewBinding used throughout
+Kotlin · Android · Android Jetpack · MVVM · Room DB · Retrofit · Google Places API · Glide · Google Maps SDK · JUnit · Espresso
+
+## Getting Started
+
+```bash
+./gradlew assembleDebug    # Open in Android Studio or build debug APK (requires Google Maps/Places API key)
+./gradlew test             # Run local JUnit tests
+```

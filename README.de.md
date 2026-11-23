@@ -1,24 +1,42 @@
 <!-- portfolio:date=2020-07-14 -->
+# My Favourite Location
 
-[Deutsch](README.de.md) · [English](README.md)
+**[English](README.md) · [Deutsch](README.de.md)**
 
-# Mein Lieblingsort
+<p align="center"><img src="docs/screenshots/mvvm-architecture.png" alt="Android-Kotlin-MVVM-Architektur mit Jetpack Navigation, Repositories, Room DB und Retrofit" width="100%" /></p>
 
-Eine native Android-App zum Suchen, Speichern und Kartieren von Lieblingsorten über die Google Places API, entwickelt mit Kotlin und MVVM.
+Eine native Android-App in Kotlin mit MVVM-Architektur, lokalem Room-DB-Speicher, Retrofit und Google Places API zum Entdecken, Kartieren und Speichern von Lieblingsorten.
+
+## Highlights
+
+- **Klare MVVM- & Android-Jetpack-Architektur** — trennt Jetpack-Navigation-Fragmente, `ViewModel`/`LiveData`-Zustände und vier spezialisierte Repositories (`HomeRepository`, `SearchRepository`, `AddLocationRepository`, `FavLocationRepository`).
+- **Offline-First mit Room DB & Google Places API** — speichert Favoriten samt Position über `LocationDB` und typgeprüfte `LocationDao`-Abfragen (`Room DB`), während `Retrofit` + Gson und `GPSTracker` Orte über die `Google Places API` laden.
+- **Bild-Caching & Android-Testsuite** — lädt Ortsfotos performant mit `Glide`, zeigt Marker auf Google Maps und enthält JUnit- sowie Espresso-UI-Tests.
+
+## Screenshots
 
 <p align="center">
-  <img src="docs/kotlin.svg" alt="Kotlin" width="170" />
+  <img src="docs/screenshots/places-sync-flow.png" alt="Datenfluss zwischen Google Places API und lokalem Room-DB-Cache" width="100%" />
 </p>
 
-### Funktionen
+## Architektur
 
-- **Ortssuche** über die Google Places API mit Autovervollständigung
-- **Kartenansicht** zur visuellen Darstellung gespeicherter Orte
-- **Offline-Speicherung** via Room DB (SQLite-Abstraktion)
-- **MVVM-Architektur** für klare Trennung von UI und Datenschicht
-- **Retrofit** für typsichere HTTP-Anfragen an die Places API
-- **Android Jetpack** Komponenten (ViewModel, LiveData, Navigation)
+```
+Jetpack-Navigation-Fragmente + ViewBinding (Home · Suche · Hinzufügen · Karte · Vollbild)
+         │  ViewModel + LiveData
+         ▼
+Repositories (Home · Search · AddLocation · FavLocation + Callbacks)
+         ├──► Room DB (LocationDB · LocationDao · TypeConverter ──► Lokales SQLite)
+         └──► Retrofit + PlacesAPI + GPSTracker ──► Google Places API + Glide
+```
 
-### Technischer Aufbau
+## Tech-Stack
 
-Die App folgt dem MVVM-Muster mit einem Repository-Layer, der zwischen der lokalen Room-Datenbank und der Remote-API vermittelt. ViewModels halten den UI-Zustand lifecycle-bewusst und kommunizieren über LiveData-Streams mit den Fragments.
+Kotlin · Android · Android Jetpack · MVVM · Room DB · Retrofit · Google Places API · Glide · Google Maps SDK · JUnit · Espresso
+
+## Einrichtung
+
+```bash
+./gradlew assembleDebug    # In Android Studio öffnen oder Debug-APK bauen (Google-API-Key nötig)
+./gradlew test             # Lokale JUnit-Tests ausführen
+```
